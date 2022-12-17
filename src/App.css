@@ -33,9 +33,13 @@
 }
 
 .black {
-  background-color: blue;
+  background-color: rgb(142, 142, 217);
 }
 
 .white {
   background-color: rgb(204, 204, 172);
+}
+
+.select {
+  background-color: chocolate;
 }

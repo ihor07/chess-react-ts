@@ -5,7 +5,7 @@ import { Cell } from '../Cell'
 export enum FigureNames {
   FIGURE = 'Figure',
   KING = 'King',
-  Knight = 'Kinght',
+  Knight = 'Knight',
   PAWN = 'Pawn',
   QUEEN = 'Queen',
   ROOK = 'Rook',
