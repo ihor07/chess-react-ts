@@ -8,7 +8,7 @@ export class Cell {
   readonly color: Colors
   figure: Figure | null
   board: Board
-  avaliable: boolean
+  available: boolean
   id: number //for key react
 
   constructor(
@@ -23,7 +23,7 @@ export class Cell {
     this.color = color
     this.figure = figure
     this.board = board
-    this.avaliable = false
+    this.available = false
     this.id = Math.random()
   }
 }

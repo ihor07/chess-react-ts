@@ -16,6 +16,15 @@ const BoardComponent: FC<BoardProps> = ({ board, setBoard }) => {
       setSelectCell(cell)
     }
   }
+
+  function highlightCells() {
+    board.highlightCells(selectCell)
+    updateBoard()
+  }
+  function updateBoard() {
+    const newBoard = board.getCopyBoard()
+    setBoard(newBoard)
+  }
   return (
     <div className="board">
       {board.cells.map((row, index) => (
