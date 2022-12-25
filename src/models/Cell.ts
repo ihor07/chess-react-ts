@@ -28,8 +28,15 @@ export class Cell {
     this.id = Math.random()
   }
 
-  isEmpty() {
+  isEmpty(): boolean {
     return this.figure === null
+  }
+
+  isEnemyDown(target: Cell): boolean {
+    if (target.figure) {
+      return this.figure?.color !== target.figure.color
+    }
+    return false
   }
 
   isEmptyVertical(target: Cell): boolean {
