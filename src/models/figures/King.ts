@@ -11,7 +11,28 @@ export class King extends Figure {
     this.name = FigureNames.KING
   }
   canMove(target: Cell): boolean {
-    if (!super.canMove(target)) return false
-    return true
+    if (target.figure?.name === FigureNames.KING && target.figure?.color)
+      if (!super.canMove(target)) return false
+    const verticalDirection =
+      (target.y === this.cell.y + 1 || target.y === this.cell.y - 1) &&
+      target.x === this.cell.x
+    const horizontalDirection =
+      (target.x === this.cell.x + 1 || target.x === this.cell.x - 1) &&
+      target.y === this.cell.y
+    const diagonalDirectionLeft =
+      (target.x === this.cell.x + 1 && target.y === this.cell.y + 1) ||
+      (target.x === this.cell.x - 1 && target.y === this.cell.y - 1)
+    const diagonalDirectionRight =
+      (target.x === this.cell.x + 1 && target.y === this.cell.y - 1) ||
+      (target.x === this.cell.x - 1 && target.y === this.cell.y + 1)
+
+    if (
+      verticalDirection ||
+      horizontalDirection ||
+      diagonalDirectionLeft ||
+      diagonalDirectionRight
+    )
+      return true
+    return false
   }
 }
