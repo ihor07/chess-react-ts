@@ -11,8 +11,7 @@ export class King extends Figure {
     this.name = FigureNames.KING
   }
   canMove(target: Cell): boolean {
-    if (target.figure?.name === FigureNames.KING && target.figure?.color)
-      if (!super.canMove(target)) return false
+    if (!super.canMove(target)) return false
     const verticalDirection =
       (target.y === this.cell.y + 1 || target.y === this.cell.y - 1) &&
       target.x === this.cell.x
